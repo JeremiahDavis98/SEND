@@ -1,0 +1,9 @@
+.HomePage .homepg {
+    padding: 10cm 0;
+    text-align: center;
+}
+.HomePage .homepg h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: 500;
+}
