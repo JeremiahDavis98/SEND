@@ -14,6 +14,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 function App() {
+<<<<<<< HEAD
   const [isLoggedIn, setIsLoggedIn] = useState();//useState(Auth.isAuthenticated()) 
   const [isAuth, setAuth] = useState();
   function requireAuth(component){
@@ -34,6 +35,52 @@ function App() {
           <Route path= "/" exact component = {Downloads} />
         </Switch>
       </Router>
+=======
+  const [isLoggedIn, setIsLoggedIn] = useState();//Auth.isAuthenticated());
+  return (
+    <div className="App">
+      <Navbar collapseOnSelect bg = "light" expand = "md" className = "mb-3">
+        <LinkContainer to = "/HomePage">
+          <Navbar.Brand className = "Page Select">
+            EE461L - Team SEND Project
+          </Navbar.Brand>
+        </LinkContainer>
+
+        <Navbar.Toggle/>
+        <Navbar.Collapse>
+          <Nav activeKey = {window.location.pathname}>
+            {isLoggedIn ? (
+              <>
+                <LinkContainer to = "/Downloads">
+                  <Nav.Link>Dataset Downloads</Nav.Link>
+                </LinkContainer> <br></br>
+                <LinkContainer to = "/Login">
+                  <Nav.Link>Logout</Nav.Link>
+                </LinkContainer>
+              </>
+            )
+            : (
+              <>
+              <LinkContainer to = "/Login">
+                <Nav.Link>Login</Nav.Link>
+              </LinkContainer> <br></br>
+              <LinkContainer to = "/Signup">
+                <Nav.Link>Signup</Nav.Link>
+              </LinkContainer> <br></br>
+              <LinkContainer to = "/Downloads">
+                <Nav.Link>Dataset Downloads</Nav.Link>
+              </LinkContainer>
+              </>
+            )}
+
+
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <AppContext.Provider value = {{isLoggedIn, setIsLoggedIn}}>
+        <Routes />
+      </AppContext.Provider>
+>>>>>>> 3c5f76a76a436e31b63eb9f023d5463f51bc9231
     </div>
   );
 }
