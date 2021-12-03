@@ -1,15 +1,16 @@
-// import React, { useState } from "react";
-// import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
-// import { useAppContext } from "../lib/contextLib";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { useAppContext } from "../lib/contextLib";
 import "./Login.css";
+import Auth from "./../../Auth"
 
 export default function Login() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   // const {userHasAuthenticated} = useAppContext();
   function validateForm() {
-    return username.length > 0 && password.length > 0;
+    return user.length > 0 && pass.length > 0;
   }
 
   function handleSubmit(event) {
