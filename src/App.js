@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 import Routes from './Routes';
+import { AppContext } from './Pages/lib/contextLib';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(Auth.isAuthenticated())
