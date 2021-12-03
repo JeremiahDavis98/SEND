@@ -1,4 +1,4 @@
-class Auth {
+export default class Auth {
   async login(username, password) {
     const reqOptions = {
       method: 'POST',
