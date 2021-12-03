@@ -1,4 +1,4 @@
-class Auth() {
+class Auth {
   async login(username, password) {
     const reqOptions = {
       method: 'POST',
@@ -6,12 +6,11 @@ class Auth() {
       body: JSON.stringify({ 'user' : username, 'pass' : password})
     }
 
-    const data = await fetch('/api/login', reqOptions).json();
-    access_token = data.access_token;
+    const response = await fetch('/api/login', reqOptions)
+    const data = await response.json();
 
-    if (data.acess_token) {
-      localStorage.setItem('access', access_token);
-      )
+    if (data.access_token) {
+      localStorage.setItem('access', data.access_token);
     }
     return data;
   }
@@ -25,16 +24,16 @@ class Auth() {
     const data = await fetch('/api/register', reqOptions).json();
 
     if (data.access_token) {
-      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('access_token', data.access_token);
     }
     return data;
   }
 
   isAuthenticated() {
-    return localStorage.getItem('access') != null;
+    return localStorage.getItem('access_token') != null;
   }
 
   logout() {
-    localStorage.removeItem('access');
+    localStorage.removeItem('access_token');
   }
 }
