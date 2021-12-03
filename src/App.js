@@ -10,7 +10,7 @@ import Routes from './Routes';
 import { AppContext } from './Pages/lib/contextLib';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState();//useState(Auth.isAuthenticated())
+  const [isLoggedIn, setIsLoggedIn] = useState(Auth.isAuthenticated());
   return (
     <div className="App">
       <Navbar collapseOnSelect bg = "light" expand = "md" className = "mb-3">
@@ -25,13 +25,10 @@ function App() {
           <Nav activeKey = {window.location.pathname}>
             {isLoggedIn ? (
               <>
-                <LinkContainer to = "/Signup">
-                  <Nav.Link>Signup</Nav.Link>
-                </LinkContainer> <br></br>
                 <LinkContainer to = "/Downloads">
                   <Nav.Link>Dataset Downloads</Nav.Link>
                 </LinkContainer> <br></br>
-                <LinkContainer to = "/api/logout">
+                <LinkContainer to = "/Login">
                   <Nav.Link>Logout</Nav.Link>
                 </LinkContainer>
               </>
@@ -46,9 +43,6 @@ function App() {
               </LinkContainer> <br></br>
               <LinkContainer to = "/Downloads">
                 <Nav.Link>Dataset Downloads</Nav.Link>
-              </LinkContainer> <br></br>
-              <LinkContainer to = "/api/logout">
-                <Nav.Link>Logout</Nav.Link>
               </LinkContainer>
               </>
             )}
