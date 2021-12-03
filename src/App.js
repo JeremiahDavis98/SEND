@@ -17,7 +17,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState();//useState(Auth.isAuthenticated()) 
   const [isAuth, setAuth] = useState();
   function requireAuth(component){
-    <Redirect to = "/login" />;
+    return !Auth.isAuthenticated() ? <Redirect to = "/login" /> : component;
   }
   function updateApp(){
     setAuth(!isAuth);
