@@ -1,4 +1,4 @@
-export default class Auth {
+class Auth {
   async login(username, password) {
     const reqOptions = {
       method: 'POST',
@@ -37,3 +37,5 @@ export default class Auth {
     localStorage.removeItem('access_token');
   }
 }
+
+export default Auth;

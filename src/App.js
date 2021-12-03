@@ -10,7 +10,7 @@ import Routes from './Routes';
 import { AppContext } from './Pages/lib/contextLib';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(Auth.isAuthenticated())
+  const [isLoggedIn, setIsLoggedIn] = useState();//useState(Auth.isAuthenticated())
   return (
     <div className="App">
       <Navbar collapseOnSelect bg = "light" expand = "md" className = "mb-3">
