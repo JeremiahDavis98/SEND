@@ -4,7 +4,7 @@ import Page from './Page';
 import Auth from './Auth';
 
 function App() {
-  const [isLoggedIn, setItLoggedIn] = useState(Auth.isAuthenticated())
+  // const [isLoggedIn, setItLoggedIn] = useState(Auth.isAuthenticated())
   return (
     <div className="App">
       <Page />
